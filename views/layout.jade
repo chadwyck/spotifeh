@@ -1,15 +1,24 @@
 doctype
 html
   head
+    meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     title #{title} - My Site
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/build/jquery.js')
+    script(src='/build/mediaelement-and-player.min.js')
+    link(rel='stylesheet', href='/build/mediaelementplayer.min.css')
+
   body
+    // script .
+    //  $('audio').mediaelementplayer();
+    // script .
+    //  var player = new MediaElementPlayer('#player2');
     header
       h1 Spotifeh
     .container
       .main-content
         block content
       .sidebar
-        block sidebar
+        block task-sidebar
     footer
       p Running on node with Express, Jade and Stylus
