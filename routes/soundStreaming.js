@@ -1,6 +1,6 @@
 
 var fs = require('fs');
-var path = require('path');
+// var path = require('path');
 
 exports.streaming = function(req,res){
 	console.log('streamed');

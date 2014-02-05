@@ -5,7 +5,7 @@ stSound = require('./soundStreaming');
 exports.route = function (app) {
 	app.get('/', index);
 	app.post('/', postIndex);
-	app.get('/files/:filename', getSoundFile);
+	// app.get('/files/:filename', getSoundFile);
 };
 
 index = function (req, res) {
