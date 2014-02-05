@@ -4,9 +4,24 @@ html
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     title #{title} - My Site
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/build/jquery.js')
-    script(src='/build/mediaelement-and-player.min.js')
-    link(rel='stylesheet', href='/build/mediaelementplayer.min.css')
+    link(rel='stylesheet', href='/stylesheets/360player.css')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/berniecode-animator.js')
+    script(src='/javascripts/soundmanager2-jsmin.js')
+    script(src='/javascripts/360player.js')
+    script(src='/javascripts/wavesurfer.min.js')
+    script(src='/javascripts/handler.js')
+
+    //- script(href='javascripts/soundmanager2.js', type="text/javascript")
+    //- script.
+    //-   soundManager.url = 'swf/soundmanager2.swf'; // path to movie   
+    //   soundManager.onload = function() {  // soundManager.createSound() etc. may now be called
+    //     soundManager.createSound({id:'myMp3',
+    //       url:'/../files/FloatOn.mp3',
+    //       onfinish:function() {}
+    //     });
+    //   }
+
 
   body
     header

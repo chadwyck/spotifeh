@@ -5,11 +5,11 @@ stSound = require('./soundStreaming');
 exports.route = function (app) {
 	app.get('/', index);
 	app.post('/', postIndex);
-	// app.get('/files/:filename', getSoundFile);
+	app.get('/files/:filename', getSoundFile);
 };
 
 index = function (req, res) {
-	return res.render('index', {title: 'Home'});
+	return res.render('index', {title: 'Home', url: __dirname+"/../files/FloatOn.mp3"});
 };
 
 postIndex = function(req, res){

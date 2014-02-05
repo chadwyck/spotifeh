@@ -1,4 +1,10 @@
 extend layout
 block content
   h2 Audio - mp3
-  audio(id="player", src="/../files/19-FloatOn(feat.CharliXCX).mp3", type="audio/mp3", controls="controls")
+  div.ui360
+    div.waveform
+      div.progress.progress-striped.active.progress-bar-outer
+        div.progress-bar.progress-bar-info
+    span.glyphicon.glyphicon-play.profile-track-play-pause(style='margin-top:5px')
+    script.
+            loadMusic('../files/FloatOn.mp3');
