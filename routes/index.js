@@ -6,6 +6,7 @@ exports.route = function (app) {
 	app.get('/', index);
 	app.post('/', postIndex);
 	app.get('/files/:filename', getSoundFile);
+	app.get('/artists', getArtists);
 };
 
 index = function (req, res) {
@@ -22,4 +23,8 @@ postIndex = function(req, res){
 
 getSoundFile = function(req, res){
 	return stSound.streaming(req, res);
+};
+
+getArtists = function(req, res) {
+	res.render('index', {title: 'Artists', url: __dirname+"/../files/FloatOn.mp3"});
 };
