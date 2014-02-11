@@ -4,30 +4,40 @@ html
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     title #{title} - My Site
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/360player.css')
     script(src='/javascripts/jquery.min.js')
     script(src='/javascripts/berniecode-animator.js')
-    script(src='/javascripts/soundmanager2-jsmin.js')
-    script(src='/javascripts/360player.js')
     script(src='/javascripts/wavesurfer.min.js')
     script(src='/javascripts/handler.js')
-
-    //- script(href='javascripts/soundmanager2.js', type="text/javascript")
-    //- script.
-    //-   soundManager.url = 'swf/soundmanager2.swf'; // path to movie   
-    //   soundManager.onload = function() {  // soundManager.createSound() etc. may now be called
-    //     soundManager.createSound({id:'myMp3',
-    //       url:'/../files/FloatOn.mp3',
-    //       onfinish:function() {}
-    //     });
-    //   }
+    script(src='/javascripts/frontend.js')
 
 
   body
-    header
-      h1 Spotifeh
+    div.navbar
+        a#brand(href='/')
+            img#brandImg(src='/images/brand.svg')
+        div.nav-user
+            a#login(href='/login') login
+            div.divider
+            a#signup(href='/signup') signup
+
     .container
       .main-content
         block content
     footer
-      p Running on node with Express, Jade and Stylus
+      div.controller
+        div.wavy-time#currentTime 0:00
+        img.skips#skip-left(src='/images/skipBackButton.svg')
+        img#play-pause(src='/images/playButton.svg')
+        img.skips#skip-right(src='/images/skipForwardButton.svg')
+        img.skips#mute(src='/images/volumeFull.svg')
+        img.skips#repeat(src='/images/repeatFalse.svg')
+        div.wavy-time#endTime 0:00
+      div.timeWave
+        div.wavy
+            div.waveform
+              div.progress.progress-striped.active.progress-bar-outer
+                div.progress-bar.progress-bar-info
+            span.glyphicon.glyphicon-play.profile-track-play-pause(style='margin-top:5px')
+            script.
+                    loadMusic('../files/FloatOn.mp3');
+        

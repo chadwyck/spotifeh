@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="40.340199"
-   height="1090.5814"
+   width="32.3922"
+   height="37.826111"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="New document 1">
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="skipBackButton.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="1424.1212"
-     inkscape:cy="482.38434"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-6.4114918"
+     inkscape:cy="31.1109"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,11 +34,11 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1855"
-     inkscape:window-height="1056"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="463"
+     inkscape:window-height="423"
+     inkscape:window-x="125"
+     inkscape:window-y="125"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -55,11 +55,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(1765.7137,1161.7005)">
+     transform="translate(-335.23247,-587.73484)">
     <path
        inkscape:connector-curvature="0"
-       style="fill:#a1cace;fill-opacity:1;stroke:none"
-       d="m -1765.7137,-1161.7005 15.7906,15.7906 0,1074.790794 8.7726,0 0,-1074.818194 15.777,-15.7632 -40.3402,0 z"
-       id="rect2985-0" />
+       id="path16335-4-9-1-6-0-9-4-5-4"
+       d="m 349.69687,587.74195 c 9.9928,0.5063 17.9278,8.7901 17.9278,18.9096 0,10.4458 -8.464,18.9094 -18.9101,18.9094 -5.2382,0 -9.9706,-2.132 -13.3953,-5.5718 1.8653,-4.0141 2.9158,-8.4757 2.9158,-13.1933 0,-4.788 -1.0846,-9.3356 -3.0026,-13.3955 3.4308,-3.4906 8.201,-5.6584 13.4821,-5.6584 0.3261,0 0.6598,-0.016 0.9823,0 z m -1.0107,14.7812 0,2.2517 -3.7537,-2.165 0.084,7.3039 3.8107,-2.425 0,2.4828 6.1786,-3.6664 -6.3223,-3.782 z"
+       style="fill:#ff6563;fill-opacity:1;stroke:none" />
   </g>
 </svg>

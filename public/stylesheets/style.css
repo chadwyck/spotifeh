@@ -104,23 +104,51 @@ a img {
  * background color as variables
  */
 body {
-  font-family: 'Amatic SC';
-  background-color: #edd3b3;
+  font-family: 'Montserrat';
+  background-color: #ebebeb;
   color: #444;
 }
-header {
-  font-family: 'Montserrat';
-  padding: 50px 10px;
+.navbar {
+  padding: 0px 15%;
+  font-size: 20px;
+  background-color: #000;
+  height: 60px;
+  overflow: visible;
   color: #fff;
-  font-size: 25px;
-  text-align: center;
-/*
-   * Note the use of the `main-color`
-   * variable and the `darken` function
-   */
-  background-color: #84b3aa;
-  border-bottom: 1px solid #53877d;
-  text-shadow: 0px -1px 0px #53877d;
+  margin-bottom: 20px;
+  color: #fff;
+}
+#brand {
+  float: left;
+  padding: 6px;
+  top: 0px;
+  display: inline;
+  width: 100px;
+}
+#brandImg {
+  height: 48px;
+}
+a {
+  color: main-white;
+  text-decoration: none;
+}
+.divider {
+  background-color: #fff;
+  width: 3px;
+  top: 15px;
+  height: 30px;
+  display: inline;
+  margin: 0px;
+  position: absolute;
+}
+.nav-user {
+  float: right;
+  display: inline;
+  line-height: 60px;
+}
+.nav-user > a {
+  margin: 20px;
+  color: #fff;
 }
 .container {
   width: 500px;
@@ -130,9 +158,6 @@ header {
 .main-content {
   float: left;
   width: 300px;
-}
-.main-content p {
-  margin-bottom: 20px;
 }
 .sidebar {
   float: left;
@@ -148,12 +173,12 @@ header {
   border-radius: 3px;
   border: 1px solid #ccc;
   margin-left: 20px;
-  background-color: #edd3b3;
+  background-color: #ebebeb;
   -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
   box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
 }
 .sidebar .widget h1 {
-  font-family: 'Quicksand';
+  font-family: 'Montserrat';
   margin: 13px 10px 4px;
   padding-bottom: 10px;
   border-bottom: 1px dotted #ddd;
@@ -170,9 +195,57 @@ p {
   line-height: 1.8;
 }
 footer {
-  width: 500px;
-  margin: 50px auto;
-  border-top: 1px dotted #ccc;
+  width: 100%;
+  bottom: 0;
   padding-top: 5px;
   font-size: 13px;
+  position: fixed;
+  background-color: #000;
+  color: #fff;
+}
+.wavy {
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+.timeWave {
+  margin-left: auto;
+  margin-right: auto;
+}
+.wavy-time {
+  display: inline;
+  position: relative;
+  bottom: -45px;
+}
+#currentTime {
+  right: 35%;
+}
+#endTime {
+  left: 35%;
+}
+.controller {
+  text-align: center;
+  margin: 20px;
+  height: 50px;
+  line-height: 50px;
+}
+#play-pause {
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.skips {
+  display: inline;
+  position: relative;
+  height: 33.333333333333336px;
+  bottom: 8.333333333333334px;
+}
+#mute {
+  height: 16.666666666666668px;
+  bottom: 16.666666666666668px;
+  left: 10%;
+}
+#repeat {
+  left: 15%;
 }
