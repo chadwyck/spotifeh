@@ -164,13 +164,26 @@ h1 {
   color: #fff;
 }
 .container {
-  width: 500px;
+  width: 100%;
+  max-width: 1200px;
   margin: 50px auto;
   overflow: hidden;
 }
-.main-content {
-  float: left;
-  width: 300px;
+.resultsPanel {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #dadada;
+  padding: 30px;
+}
+.albumCover {
+  width: 150px;
+}
+.container > h1 {
+  margin-left: 5%;
+  margin-bottom: 20px;
+  color: #c1333f;
 }
 .sidebar {
   float: left;
@@ -261,4 +274,18 @@ footer {
 }
 #repeat {
   left: 15%;
+}
+.resultBold {
+  font-size: 20px;
+  color: #000;
+  line-height: 20px;
+}
+.resultLame {
+  font-size: 12px;
+  color: #808080;
+  line-height: 20px;
+}
+.resultItem {
+  display: inline-block;
+  margin: 20px;
 }

@@ -5,6 +5,7 @@ html
     title #{title} - My Site
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/sliders.css')
+    link(rel='stylesheet', href='/stylesheets/buttons.css')
     script(src='/javascripts/jquery_2.1.0.js')
     script(src='/javascripts/jquery_ui_1.10.4.min.js')
     script(src='/javascripts/jQueryRotateCompressed.js')
@@ -25,7 +26,6 @@ html
             a#signup(href='/signup') signup
 
     .container
-      .main-content
         block content
 
     div.sliderPane#picturePane
@@ -34,6 +34,7 @@ html
             p#artists artists
             p#albums albums
             p#songs songs
+        button.flat-button.flat-button-1(type="button", onclick="") upload
     div.sliderToggle#pictureSlider
         img#sliderImg(src='/images/slider.svg')
 
