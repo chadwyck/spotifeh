@@ -4,11 +4,15 @@ html
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     title #{title} - My Site
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/jquery.min.js')
+    link(rel='stylesheet', href='/stylesheets/sliders.css')
+    script(src='/javascripts/jquery_2.1.0.js')
+    script(src='/javascripts/jquery_ui_1.10.4.min.js')
+    script(src='/javascripts/jQueryRotateCompressed.js')
     script(src='/javascripts/berniecode-animator.js')
     script(src='/javascripts/wavesurfer.min.js')
     script(src='/javascripts/handler.js')
     script(src='/javascripts/frontend.js')
+    script(src='/javascripts/slider.js')
 
 
   body
@@ -23,6 +27,16 @@ html
     .container
       .main-content
         block content
+
+    div.sliderPane#picturePane
+        h1 browse by
+        div.browseCat
+            p#artists artists
+            p#albums albums
+            p#songs songs
+    div.sliderToggle#pictureSlider
+        img#sliderImg(src='/images/slider.svg')
+
     footer
       div.controller
         div.wavy-time#currentTime 0:00

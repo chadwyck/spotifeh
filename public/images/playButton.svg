@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="playButton.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="28.58075"
-     inkscape:cy="28.580697"
+     inkscape:zoom="2.8"
+     inkscape:cx="18.274614"
+     inkscape:cy="-14.327356"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,10 +34,10 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="463"
-     inkscape:window-height="423"
-     inkscape:window-x="250"
-     inkscape:window-y="250"
+     inkscape:window-width="944"
+     inkscape:window-height="1002"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -60,6 +60,6 @@
        inkscape:connector-curvature="0"
        id="path16335-1-7-5-1-0-6-9"
        d="m 374.99975,503.78148 c -15.7835,0 -28.5805,12.7968 -28.5805,28.5808 0,15.7839 12.797,28.5806 28.5805,28.5806 15.7846,2e-4 28.581,-12.7967 28.581,-28.5806 0,-15.784 -12.7964,-28.5808 -28.581,-28.5808 z m -6.6112,15.3296 21.1323,13.2512 -21.1323,13.2509 0,-26.5021 z"
-       style="fill:#c1333f;fill-opacity:1;stroke:none" />
+       style="fill:#c13333;fill-opacity:1;stroke:none" />
   </g>
 </svg>

@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="pauseButton.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="28.593751"
-     inkscape:cy="28.578102"
+     inkscape:zoom="1.4"
+     inkscape:cx="-8.7902914"
+     inkscape:cy="108.00053"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,10 +34,10 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="463"
-     inkscape:window-height="423"
-     inkscape:window-x="25"
-     inkscape:window-y="25"
+     inkscape:window-width="944"
+     inkscape:window-height="1002"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -60,16 +60,16 @@
        transform="matrix(0.28814619,0,0,0.28814619,235.14245,578.09737)"
        id="layer1-9"
        inkscape:label="Layer 1"
-       style="fill:#c1333f;fill-opacity:1">
+       style="fill:#c13333;fill-opacity:1">
       <path
-         style="fill:#c1333f;fill-opacity:1;stroke:none"
+         style="fill:#c13333;fill-opacity:1;stroke:none"
          d="m 485.37029,-257.90133 c -54.77914,0 -99.23366,44.45278 -99.23366,99.23331 0,54.78018 44.45452,99.12503 99.23366,99.12503 54.78191,6.94e-4 99.23331,-44.34485 99.23331,-99.12503 0,-54.78053 -44.4514,-99.23331 -99.23331,-99.23331 z m -35.03014,53.35833 23.75114,0 0,91.74996 -23.75114,0 0,-91.74996 z m 46.30914,0 23.75079,0 0,91.74996 -23.75079,0 0,-91.74996 z"
          id="path13051"
          inkscape:connector-curvature="0" />
       <g
          transform="matrix(3.470639,0,0,3.470639,978.99314,-9996.486)"
          id="g13491"
-         style="fill:#c1333f;fill-opacity:1" />
+         style="fill:#c13333;fill-opacity:1" />
     </g>
   </g>
 </svg>

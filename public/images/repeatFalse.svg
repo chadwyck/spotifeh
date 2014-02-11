@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="repeatFalse.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="8.05405"
-     inkscape:cy="11.93724"
+     inkscape:zoom="1.979899"
+     inkscape:cx="19.819768"
+     inkscape:cy="-137.43247"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,10 +34,10 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="463"
-     inkscape:window-height="423"
-     inkscape:window-x="250"
-     inkscape:window-y="250"
+     inkscape:window-width="944"
+     inkscape:window-height="1002"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -59,19 +59,19 @@
     <g
        id="g4502-7-7"
        transform="matrix(0.79258382,0,0,0.79258382,304.36797,-1865.2719)"
-       style="fill:#671b21;fill-opacity:1">
+       style="fill:#671b1b;fill-opacity:1">
       <path
          sodipodi:nodetypes="ccccccc"
          inkscape:connector-curvature="0"
          id="path15634-2-3-6-5-7"
          d="m 89.20122,3010.0247 0,3.6766 c -6.5109,0.4526 -9.7582,4.5703 -10.2468,12.051 2.1805,-3.9314 4.9389,-5.8536 10.2468,-5.651 l 0,3.5404 10.0767,-7.149 z"
-         style="fill:#671b21;fill-opacity:1;stroke:none" />
+         style="fill:#671b1b;fill-opacity:1;stroke:none" />
       <path
          sodipodi:nodetypes="ccccccc"
          inkscape:connector-curvature="0"
          id="path15634-2-3-6-1-4-9"
          d="m 89.0311,3040.147 0,-3.6766 c 6.5109,-0.4526 9.7582,-4.5703 10.2468,-12.051 -2.1805,3.9314 -4.9389,5.8536 -10.2468,5.651 l 0,-3.5404 -10.0767,7.149 z"
-         style="fill:#671b21;fill-opacity:1;stroke:none" />
+         style="fill:#671b1b;fill-opacity:1;stroke:none" />
     </g>
   </g>
 </svg>
