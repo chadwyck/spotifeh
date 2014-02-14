@@ -5,9 +5,6 @@
  * Grab a custom font from Google
  */
 @import url("http://fonts.googleapis.com/css?family=Montserrat|Amatic+SC");
-/*
- * Nib provides a CSS reset
- */
 html,
 body,
 div,
@@ -99,10 +96,6 @@ td {
 a img {
   border: none;
 }
-/*
- * Store the main color and
- * background color as variables
- */
 body {
   font-family: 'Montserrat';
   background-color: #ebebeb;
@@ -185,38 +178,6 @@ h1 {
   margin-bottom: 20px;
   color: #c1333f;
 }
-.sidebar {
-  float: left;
-  width: 200px;
-}
-.sidebar .widget {
-/*
-     * Note the lack of vendor
-     * prefixes here. Nib will
-     * add them for us
-     */
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  margin-left: 20px;
-  background-color: #ebebeb;
-  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
-  box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
-}
-.sidebar .widget h1 {
-  font-family: 'Montserrat';
-  margin: 13px 10px 4px;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted #ddd;
-  -webkit-border-radius: 2px 2px 0px 0px;
-  border-radius: 2px 2px 0px 0px;
-  margin-bottom: 10px;
-}
-.sidebar .widget p {
-  font-size: 13px;
-  padding: 0px 10px;
-  margin-bottom: 10px;
-}
 p {
   line-height: 1.8;
 }
@@ -288,4 +249,7 @@ footer {
 .resultItem {
   display: inline-block;
   margin: 20px;
+}
+#uploadBtn {
+  margin-left: 27%;
 }

@@ -34,11 +34,13 @@ html
             p#artists artists
             p#albums albums
             p#songs songs
-        button.flat-button.flat-button-1(type="button", onclick="") upload
+        button.flat-button.flat-button-1#uploadBtn(type="button", onclick="") upload
     div.sliderToggle#pictureSlider
         img#sliderImg(src='/images/slider.svg')
 
     footer
+      div.queueContainer
+
       div.controller
         div.wavy-time#currentTime 0:00
         img.skips#skip-left(src='/images/skipBackButton.svg')
