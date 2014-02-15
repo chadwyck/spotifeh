@@ -1,6 +1,7 @@
 var index, stSound, postIndex, getSoundFile;
 
 stSound = require('./soundStreaming');
+browseDisplay = require('./browseDisplay');
 
 exports.route = function (app) {
 	app.get('/', index);
@@ -26,5 +27,6 @@ getSoundFile = function(req, res){
 };
 
 getArtists = function(req, res) {
-	res.render('index', {title: 'Artists', url: __dirname+"/../files/FloatOn.mp3"});
+	return browseDisplay.artists(req, res);
+	// res.render('index', {title: 'Artists', url: __dirname+"/../files/FloatOn.mp3"});
 };
