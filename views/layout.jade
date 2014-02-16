@@ -31,9 +31,9 @@ html
     div.sliderPane#picturePane
         h1 browse by
         div.browseCat
-            p#artists artists
-            p#albums albums
-            p#songs songs
+            p#artists(onclick="ajaxArtists()", style="cursor: pointer;") artists
+            p#albums(onclick="ajaxAlbums()", style="cursor: pointer;") albums
+            p#songs(onclick="ajaxSongs()", style="cursor: pointer;") songs
         button.flat-button.flat-button-1#uploadBtn(type="button", onclick="") upload
     div.sliderToggle#pictureSlider
         img#sliderImg(src='/images/slider.svg')

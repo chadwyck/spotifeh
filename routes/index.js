@@ -1,13 +1,15 @@
 var index, stSound, postIndex, getSoundFile;
 
 stSound = require('./soundStreaming');
-browseDisplay = require('./browseDisplay');
+connectionDB = require('./connectionDB');
 
 exports.route = function (app) {
 	app.get('/', index);
 	app.post('/', postIndex);
 	app.get('/files/:filename', getSoundFile);
 	app.get('/artists', getArtists);
+	app.get('/albums', getAlbums);
+	app.get('/songs', getSongs);
 };
 
 index = function (req, res) {
@@ -27,6 +29,13 @@ getSoundFile = function(req, res){
 };
 
 getArtists = function(req, res) {
-	return browseDisplay.artists(req, res);
-	// res.render('index', {title: 'Artists', url: __dirname+"/../files/FloatOn.mp3"});
+	return connectionDB.artists(req, res);
+};
+
+getAlbums = function(req, res) {
+	return connectionDB.albums(req, res);
+};
+
+getSongs = function(req, res) {
+	return connectionDB.songs(req, res);
 };
