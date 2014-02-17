@@ -5,14 +5,9 @@ var fs = require('fs');
 
 exports.streaming = function(req,res){
 	console.log('streamed');
-	// var a = req.body['audio'];
-	// new MediaElement(a, {success: function(media) {
-	//     media.play();
-	// }});
-	fs.readFile(__dirname+"/../../files/roscoeswetsuit/2/"+req.params.filename, function(err, data){
-		if(err) {
+	fs.readFile(__dirname+"/../../files/roscoeswetsuit/2/"+req.params.filename, function(err, data){		if(err) {
 			console.log(err);
-			fs.readFile(__dirname+"../../files/spotify.wav", function(err, data){
+			fs.readFile(__dirname+"/../../files/spotify.wav", function(err, data){
 				res.contentType('audio');
 				res.send(data);
 			});
@@ -21,23 +16,20 @@ exports.streaming = function(req,res){
 			res.send(data);
 		}
 	});
-	// soundManager.url = 'swf/soundmanager2.swf'; // path to movie   
-	// soundManager.onload = function() {  // soundManager.createSound() etc. may now be called
-	// 	soundManager.createSound({id:'myMp3',
-	// 		url:__dirname+'/../files/FloatOn.mp3',
-	// 		onfinish:function() {
-	// 			console.log('done');
-	// 		}
-	// 	});
-	// };
-	// var el = document.querySelector('audio');
-	// audio(el);
 }
 
 exports.image = function(req,res){
 	console.log('getting image');
-	fs.readFile(__dirname+"/../files/"+req.params.filename, function(err, data){
+	fs.readFile(__dirname+"/../../files/"+req.params.user+"/"+req.params.album+"/"+req.params.filename, function(err, data){
 		res.contentType('img');
 		res.send(data);
+	});
+exports.uploadMgr = function(req,res){
+	// console.log(req.files);
+	fs.readFile(req.files.uploadSong.path, function (err, data) {
+	  var newPath = __dirname + "/../../files/"+req.files.uploadSong.name;
+	  fs.writeFile(newPath, data, function (err) {
+	    res.redirect("back");
+	  });
 	});
 }

@@ -30,8 +30,26 @@ exports.albums = function(req,res){
 }
 
 exports.songs = function(req,res){
-	connection.query('select * from Song', function (err, rows, fields) {
+	var where;
+	where = '';
+	if(req.params.albumID != 'none'){
+		where = ' where Song.AlbumID = ' + req.params.albumID;
+	}
+	connection.query('select * from Song'+where, function (err, rows, fields) {
 	  if (err) throw err;
 	  res.send(rows);
  });
 }
+
+// exports.songs = function(req,res){
+// 	var where;
+// 	if(req.params.albumName.length > 0) {
+// 		where = ' where Song.AlbumID = "' + req.params.albumName + '"';
+// 	} else {
+// 		where = '';
+// 	}
+// 	connection.query('select * from Song' + where, function (err, rows, fields) {
+// 	  if (err) throw err;
+// 	  res.send(rows);
+//  });
+// }

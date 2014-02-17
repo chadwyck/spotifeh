@@ -37,10 +37,31 @@
   background-color: #cb3b47;
   box-shadow: 0px 3px 0px 0px #4d1419;
   padding: 5px;
+  display: block;
 }
 .flat-button-1:hover {
   background-color: #b32f3b;
 }
 .flat-button-1:active {
   box-shadow: 0px 1px 0px 0px #4d1419;
+}
+.flat-button-2 {
+  height: 25px;
+  width: 15%;
+  margin: 10px;
+  min-width: 125px;
+  background-color: #cb3b47;
+  box-shadow: 0px 3px 0px 0px #4d1419;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 25px;
+  left: 0px;
+}
+.flat-button-2:hover {
+  background-color: #b32f3b;
+}
+.flat-button-2:active {
+  box-shadow: 0px 1px 0px 0px #4d1419;
+  padding-top: 5px;
+  line-height: 27px;
 }

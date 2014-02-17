@@ -11,6 +11,19 @@
   padding-top: 50px;
   color: #fff;
 }
+.sliderPane form {
+  margin-top: 30%;
+}
+.sliderPane form #uploadFile {
+  display: inline;
+  font-size: 10px;
+}
+input {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: -50px;
+}
 .sliderToggle {
   height: 3em;
   width: 3em;

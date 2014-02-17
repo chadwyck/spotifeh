@@ -36,25 +36,31 @@ function ajaxAlbums() {
 	  	if(data[i].Image.length<1){
 	  		imgSrc = '/images/default.png';
 	  	} else {
-	  		imgSrc = '/files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
+	  		imgSrc = '/image/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	}
-	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+'>'+
+	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+
+	  		' onclick="ajaxSongs('+data[i].AlbumID+',\''+data[i].Name+'\')" style="cursor: pointer;">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=resultBold>'+data[i].Name+'</p>'+
-	  		'<p class=resultLame>ReleaseDate: '+data[i].ReleaseDate+'</p>'+
-	  		'<p class=resultLame>Genre: '+data[i].Genre+'</p></div>');
+	  		'<p class=resultLame>'+data[i].ReleaseDate+'</p>'+
+	  		'<p class=resultLame>'+data[i].Genre+'</p></div>');
 	  }
 	});
 };
 
-function ajaxSongs() {
+function ajaxSongs(albumID, albumTitle) {
+	// alert(albumID + ' ' + albumTitle);
+	var title = 'Songs';
+	if(albumID != 'none'){
+		title = albumTitle;
+	}
 	$('.resultsPanel').empty();
 	$('.resultsTitle').empty();
-	$('.resultsTitle').append('Songs');
+	$('.resultsTitle').append(title);
 	$('.resultsPanel').append('<div class="songTableHeader"><div class="blankCover" />'+
 		'<p class="title">Title</p><p class="artist">Artist</p><p class="album">Album</p>'+
 		'<p class="length">Length</p><p class="track">Track</p></div>');
-	$.get("/songs", function(data,status){
+	$.get("/songs/"+albumID, function(data,status){
 	  // alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 
 	  var i;
@@ -77,6 +83,10 @@ function ajaxSongs() {
 	  }
 	});
 };
+
+// document.getElementById("inputUpload").onchange = function () {
+//     document.getElementById("uploadFile").value = this.value;
+// };
 
 
 
