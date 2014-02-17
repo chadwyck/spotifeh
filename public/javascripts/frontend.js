@@ -51,15 +51,15 @@ function ajaxSongs() {
 	$('.resultsPanel').empty();
 	$('.resultsTitle').empty();
 	$('.resultsTitle').append('Songs');
-	// $.get("/songs", function(data,status){
-	//   alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+	$.get("/songs", function(data,status){
+	  alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 
-	//   var i;
-	//   for(i in data) {
+	  var i;
+	  for(i in data) {
 	//   	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+'_'+data[i].TrackNum'>'+
 	//   		'<p class=resultBold>'+data[i].Title+'</p>'+
 	//   		'<p class=resultLame>AlbumID: '+data[i].AlbumID+'</p>'+
 	//   		'<p class=resultLame>Length: '+data[i].Length+'</p></div>');
-	//   }
-	// });
+	  }
+	});
 };

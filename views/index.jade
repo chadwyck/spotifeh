@@ -1,14 +1,26 @@
 extend layout
 block content
-  h1.resultsTitle Poopy
+  h1.resultsTitle Songs
   div.resultsPanel
-    div.resultItem
+    div.songTableHeader
+        div.blankCover
+        p.title Title
+        p.artist Artist
+        p.album Album
+        p.length Length
+        p.track Track
+    div.resultItemSong
         img.albumCover(src='/images/fleetfoxes.jpg')
-        p.resultBold Fleet Foxes
-        p.resultLame songs: 47
-    div.resultItem
+        p.title Montezuma
+        p.artist Fleet Foxes
+        p.album Helplessness Blues
+        p.length 3:45
+        p.track 4
+    div.resultItemSong
         img.albumCover(src='/images/grizzly.png')
-        p.resultBold Grizzly Bear
-        p.resultLame songs: 64
-
-  
+        p.title Yet Again
+        p.artist Grizzly Bear
+        p.album Shields
+        p.length 4:52
+        p.track 7
+        

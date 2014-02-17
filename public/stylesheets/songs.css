@@ -1,0 +1,90 @@
+.resultItemSong {
+  background-color: #1f1f1f;
+  color: #fff;
+  width: 90%;
+  min-width: 400px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-bottom: 3px solid #0a0a0a;
+  border-top: 2px solid #4c4c4c;
+  overflow: hidden;
+  position: relative;
+}
+.albumCover {
+  height: 50px;
+  width: 50px;
+  display: inline;
+  float: left;
+}
+.title,
+.artist,
+.album,
+.track,
+.length {
+  font-size: 17.5px;
+  padding: 0px 16.666666666666668px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  overflow: hidden;
+}
+.title {
+  width: 35%;
+  float: left;
+}
+.artist {
+  width: 15%;
+  float: left;
+  background-color: #141414;
+  color: #c1333f;
+}
+.album {
+  width: 15%;
+  float: left;
+}
+.track {
+  width: 3%;
+  float: right;
+  text-align: center;
+  background-color: #141414;
+}
+.length {
+  width: 5%;
+  float: right;
+  text-align: center;
+  color: #c1333f;
+}
+.songTableHeader {
+  background-color: #c1333f;
+  color: #fff;
+  width: 90%;
+  min-width: 400px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-bottom: 3px solid #481317;
+  overflow: hidden;
+  position: relative;
+}
+.songTableHeader .blankCover {
+  width: 50px;
+  height: 50px;
+  background-color: #90262f;
+  display: inline-block;
+  float: left;
+}
+.songTableHeader .artist {
+  color: #fff;
+  background-color: #90262f;
+}
+.songTableHeader .track {
+  background-color: #90262f;
+  font-size: 10px;
+}
+.songTableHeader .length {
+  color: #fff;
+  font-size: 10px;
+}
