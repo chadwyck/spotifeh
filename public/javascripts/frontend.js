@@ -51,15 +51,39 @@ function ajaxSongs() {
 	$('.resultsPanel').empty();
 	$('.resultsTitle').empty();
 	$('.resultsTitle').append('Songs');
+	$('.resultsPanel').append('<div class="songTableHeader"><div class="blankCover" />'+
+		'<p class="title">Title</p><p class="artist">Artist</p><p class="album">Album</p>'+
+		'<p class="length">Length</p><p class="track">Track</p></div>');
 	$.get("/songs", function(data,status){
-	  alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+	  // alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 
 	  var i;
 	  for(i in data) {
-	//   	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+'_'+data[i].TrackNum'>'+
-	//   		'<p class=resultBold>'+data[i].Title+'</p>'+
-	//   		'<p class=resultLame>AlbumID: '+data[i].AlbumID+'</p>'+
-	//   		'<p class=resultLame>Length: '+data[i].Length+'</p></div>');
+	  	var imgSrc;
+	  	// if(data[i].Image.length<1){
+	    imgSrc = '/images/default.png';
+	  	// } else {
+	  	// 	imgSrc = '../files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
+	  	// }
+	  	$('.resultsPanel').append('<div class="resultItemSong">'+
+	  		'<img class="albumCover" src='+imgSrc+'></img>'+
+	  		'<p class=title>'+data[i].Title+'</p>'+
+	  		'<p class=artist>'+data[i].Username+'</p>'+
+	  		'<p class=album>'+data[i].AlbumID+'</p>'+
+	  		'<p class=length>'+data[i].Length+'</p>'+
+	  		'<p class=track>'+data[i].TrackNum+'</p>'+
+	  		'</div>');
 	  }
 	});
 };
+
+
+
+
+
+Username
+AlbumID
+TrackNum
+Length
+Title
+LinkToMedia
