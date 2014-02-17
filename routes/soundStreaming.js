@@ -9,7 +9,7 @@ exports.streaming = function(req,res){
 	// new MediaElement(a, {success: function(media) {
 	//     media.play();
 	// }});
-	fs.readFile(__dirname+"../../files/"+req.params.filename, function(err, data){
+	fs.readFile(__dirname+"/../../files/roscoeswetsuit/2/"+req.params.filename, function(err, data){
 		if(err) {
 			console.log(err);
 			fs.readFile(__dirname+"../../files/spotify.wav", function(err, data){

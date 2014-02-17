@@ -1,0 +1,6 @@
+function ajaxArtists() {
+  $('.resultsPanel').empty();
+  $.ajax({
+    url: "/artists",
+    type: "get",
+};
