@@ -24,6 +24,8 @@ exports.image = function(req,res){
 		res.contentType('img');
 		res.send(data);
 	});
+}
+
 exports.uploadMgr = function(req,res){
 	// console.log(req.files);
 	fs.readFile(req.files.uploadSong.path, function (err, data) {
