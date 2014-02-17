@@ -36,7 +36,7 @@ function ajaxAlbums() {
 	  	if(data[i].Image.length<1){
 	  		imgSrc = '/images/default.png';
 	  	} else {
-	  		imgSrc = '../files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
+	  		imgSrc = '/files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	}
 	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+'>'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
@@ -65,7 +65,8 @@ function ajaxSongs() {
 	  	// } else {
 	  	// 	imgSrc = '../files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	// }
-	  	$('.resultsPanel').append('<div class="resultItemSong">'+
+	  	$('.resultsPanel').append('<div class="resultItemSong" id="../files/'+data[i].LinkToMedia+'" '+
+	  		'onclick="clickedSong(this)">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=title>'+data[i].Title+'</p>'+
 	  		'<p class=artist>'+data[i].Username+'</p>'+
@@ -81,9 +82,11 @@ function ajaxSongs() {
 
 
 
-Username
-AlbumID
-TrackNum
-Length
-Title
-LinkToMedia
+
+
+// Username
+// AlbumID
+// TrackNum
+// Length
+// Title
+// LinkToMedia

@@ -9,9 +9,17 @@ exports.streaming = function(req,res){
 	// new MediaElement(a, {success: function(media) {
 	//     media.play();
 	// }});
-	fs.readFile(__dirname+"/../files/"+req.params.filename, function(err, data){
-		res.contentType('audio');
-		res.send(data);
+	fs.readFile(__dirname+"../../files/"+req.params.filename, function(err, data){
+		if(err) {
+			console.log(err);
+			fs.readFile(__dirname+"../../files/spotify.wav", function(err, data){
+				res.contentType('audio');
+				res.send(data);
+			});
+		} else {
+			res.contentType('audio');
+			res.send(data);
+		}
 	});
 	// soundManager.url = 'swf/soundmanager2.swf'; // path to movie   
 	// soundManager.onload = function() {  // soundManager.createSound() etc. may now be called
@@ -24,4 +32,12 @@ exports.streaming = function(req,res){
 	// };
 	// var el = document.querySelector('audio');
 	// audio(el);
+}
+
+exports.image = function(req,res){
+	console.log('getting image');
+	fs.readFile(__dirname+"/../files/"+req.params.filename, function(err, data){
+		res.contentType('img');
+		res.send(data);
+	});
 }

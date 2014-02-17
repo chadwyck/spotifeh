@@ -20,12 +20,17 @@ song-height = 50px
     border-top:2px solid lighten(song-bkgrd, 20%);
     overflow hidden
     position relative
+    cursor pointer
 
     .albumCover
         height song-height
         width song-height
         display inline
         float left
+
+.resultItemSong:hover
+    background-color darken(song-bkgrd,50%)
+    transitions(0.1s)
 
 .title, .artist, .album, .track, .length
     font-size (song-height * 0.35)

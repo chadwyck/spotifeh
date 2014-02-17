@@ -1,4 +1,4 @@
-var index, stSound, postIndex, getSoundFile;
+var index, stSound, postIndex, getSoundFile, getImageFile, getArtists, getAlbums, getSongs;
 
 stSound = require('./soundStreaming');
 connectionDB = require('./connectionDB');
@@ -7,6 +7,7 @@ exports.route = function (app) {
 	app.get('/', index);
 	app.post('/', postIndex);
 	app.get('/files/:filename', getSoundFile);
+	app.get('/image/:filename', getImageFile);
 	app.get('/artists', getArtists);
 	app.get('/albums', getAlbums);
 	app.get('/songs', getSongs);
@@ -26,6 +27,11 @@ postIndex = function(req, res){
 
 getSoundFile = function(req, res){
 	return stSound.streaming(req, res);
+};
+
+getImageFile = function(req, res){
+	console.log("image");
+	return stSound.image(req, res);
 };
 
 getArtists = function(req, res) {

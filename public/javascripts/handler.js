@@ -90,6 +90,9 @@ var loadMusic = function (url) {
 				ws.play();
 			}
 		});
+	// wavesurfer.on('loading', function (percent, xhr) {
+
+	// });
 
 // Bind buttons and keypresses
 
@@ -221,6 +224,13 @@ $(document).on('click', '#repeat', function(){
 	}
 });
 
+function clickedSong(item) {
+	if(isplaying){
+		isplaying = false;
+		document.images['play-pause'].src = '/images/playButton.svg';
+	}
+	ws.load($(item).attr("id"));
+}
 
 
 
