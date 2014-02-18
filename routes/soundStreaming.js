@@ -1,5 +1,6 @@
 
 var fs = require('fs');
+var mm = require('musicmetadata');
 // var audio = require('audio-component');
 
 
@@ -28,10 +29,15 @@ exports.image = function(req,res){
 
 exports.uploadMgr = function(req,res){
 	// console.log(req.files);
+	var albumID = '5';
 	fs.readFile(req.files.uploadSong.path, function (err, data) {
-	  var newPath = __dirname + "/../../files/"+req.files.uploadSong.name;
+	  var newPath = __dirname + "/../../files/roscoeswetsuit/"+req.files.uploadSong.name;
 	  fs.writeFile(newPath, data, function (err) {
-	    res.redirect("back");
+	    var parser = mm(fs.createReadStream(newPath));
+	    parser.on('metadata', function (result) {
+	    	console.log(result);
+	    });
+	  	res.redirect('/');
 	  });
 	});
 }

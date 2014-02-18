@@ -58,8 +58,12 @@ function ajaxSongs(albumID, albumTitle, order) {
 	$('.resultsTitle').empty();
 	$('.resultsTitle').append(title);
 	$('.resultsPanel').append('<div class="songTableHeader"><div class="blankCover" />'+
-		'<p class="title">Title</p><p class="artist">Artist</p><p class="album">Album</p>'+
-		'<p class="length">Length</p><p class="track">Track</p></div>');
+		'<div class="title head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Title\')">'+
+		'Title</div><div class="artist head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Artist\')">'+
+		'Artist</div><div class="album head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Album\')">'+
+		'Album</div><div class="length head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Length\')">'+
+		'Length</div><div class="track head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'TrackNum\')">'+
+		'Track</div></div>');
 	$.get("/songs/"+albumID+"/"+order, function(data,status){
 	  // alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 

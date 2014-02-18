@@ -10,7 +10,7 @@ song-height = 50px
 .resultItemSong
     background-color song-bkgrd
     color white
-    width 90%
+    width 96%
     min-width 400px
     height song-height
     margin-left:auto;
@@ -33,7 +33,7 @@ song-height = 50px
     transitions(0.1s)
 
 .title, .artist, .album, .track, .length
-    font-size (song-height * 0.35)
+    font-size (song-height * 0.31)
     padding 0px (song-height/3)
     height song-height
     line-height song-height
@@ -51,7 +51,7 @@ song-height = 50px
 	color header-bkgrd
 
 .album
-	width 15%
+	width 18%
 	float left
 
 .track
@@ -69,7 +69,7 @@ song-height = 50px
 .songTableHeader
     background-color header-bkgrd
     color white
-    width 90%
+    width 96%
     min-width 400px
     height song-height
     margin-left:auto;
@@ -78,6 +78,11 @@ song-height = 50px
     border-bottom:3px solid darken(header-dark-bkgrd, 50%);
     overflow hidden
     position relative
+
+    .head-click
+        cursor pointer
+        transitions(0.1s)
+        font-size (song-height * 0.35)
 
     .blankCover
     	width song-height
@@ -93,6 +98,15 @@ song-height = 50px
     .track
     	background-color header-dark-bkgrd
     	font-size (song-height * 0.20)
+
+    .track:hover, .artist:hover
+        background-color darken(header-dark-bkgrd,30%)
+
+    .title:hover, .album:hover, .length:hover
+        background-color darken(header-bkgrd, 40%)
+
+    .album
+        padding-right auto
 
     .length
     	color white

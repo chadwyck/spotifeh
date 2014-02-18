@@ -1,7 +1,7 @@
 .resultItemSong {
   background-color: #1f1f1f;
   color: #fff;
-  width: 90%;
+  width: 96%;
   min-width: 400px;
   height: 50px;
   margin-left: auto;
@@ -32,7 +32,7 @@
 .album,
 .track,
 .length {
-  font-size: 17.5px;
+  font-size: 15.5px;
   padding: 0px 16.666666666666668px;
   height: 50px;
   line-height: 50px;
@@ -50,7 +50,7 @@
   color: #c1333f;
 }
 .album {
-  width: 15%;
+  width: 18%;
   float: left;
 }
 .track {
@@ -68,7 +68,7 @@
 .songTableHeader {
   background-color: #c1333f;
   color: #fff;
-  width: 90%;
+  width: 96%;
   min-width: 400px;
   height: 50px;
   margin-left: auto;
@@ -77,6 +77,15 @@
   border-bottom: 3px solid #481317;
   overflow: hidden;
   position: relative;
+}
+.songTableHeader .head-click {
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out;
+  -moz-transition: background 0.1s ease-in-out;
+  -ms-transition: background 0.1s ease-in-out;
+  -o-transition: background 0.1s ease-in-out;
+  font-size: 17.5px;
 }
 .songTableHeader .blankCover {
   width: 50px;
@@ -92,6 +101,18 @@
 .songTableHeader .track {
   background-color: #90262f;
   font-size: 10px;
+}
+.songTableHeader .track:hover,
+.songTableHeader .artist:hover {
+  background-color: #651b21;
+}
+.songTableHeader .title:hover,
+.songTableHeader .album:hover,
+.songTableHeader .length:hover {
+  background-color: #741f26;
+}
+.songTableHeader .album {
+  padding-right: auto;
 }
 .songTableHeader .length {
   color: #fff;

@@ -96,6 +96,9 @@ td {
 a img {
   border: none;
 }
+html {
+  overflow-y: scroll;
+}
 body {
   font-family: 'Montserrat';
   background-color: #ebebeb;
@@ -158,13 +161,13 @@ h1 {
 }
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 50px auto;
   overflow: hidden;
 }
 .resultsPanel {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   background-color: #dadada;
