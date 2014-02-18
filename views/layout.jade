@@ -34,7 +34,7 @@ html
         div.browseCat
             p#artists(onclick="ajaxArtists()", style="cursor: pointer;") artists
             p#albums(onclick="ajaxAlbums()", style="cursor: pointer;") albums
-            p#songs(onclick="ajaxSongs('none','none')", style="cursor: pointer;") songs
+            p#songs(onclick="ajaxSongs('none','none','none')", style="cursor: pointer;") songs
         form(action="/", method="post", enctype="multipart/form-data")
             input(type="file", name="uploadSong", id="inputUpload", onchange="document.getElementById('uploadFile').innerHTML=this.value;")
             p.flat-button.flat-button-2(type="button", onclick="document.getElementById('inputUpload').click();") Choose File

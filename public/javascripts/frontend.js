@@ -39,7 +39,7 @@ function ajaxAlbums() {
 	  		imgSrc = '/image/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	}
 	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+
-	  		' onclick="ajaxSongs('+data[i].AlbumID+',\''+data[i].Name+'\')" style="cursor: pointer;">'+
+	  		' onclick="ajaxSongs('+data[i].AlbumID+',\''+data[i].Name+'\',\'TrackNum\')" style="cursor: pointer;">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=resultBold>'+data[i].Name+'</p>'+
 	  		'<p class=resultLame>'+data[i].ReleaseDate+'</p>'+
@@ -48,7 +48,7 @@ function ajaxAlbums() {
 	});
 };
 
-function ajaxSongs(albumID, albumTitle) {
+function ajaxSongs(albumID, albumTitle, order) {
 	// alert(albumID + ' ' + albumTitle);
 	var title = 'Songs';
 	if(albumID != 'none'){
@@ -60,23 +60,23 @@ function ajaxSongs(albumID, albumTitle) {
 	$('.resultsPanel').append('<div class="songTableHeader"><div class="blankCover" />'+
 		'<p class="title">Title</p><p class="artist">Artist</p><p class="album">Album</p>'+
 		'<p class="length">Length</p><p class="track">Track</p></div>');
-	$.get("/songs/"+albumID, function(data,status){
+	$.get("/songs/"+albumID+"/"+order, function(data,status){
 	  // alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 
 	  var i;
 	  for(i in data) {
 	  	var imgSrc;
-	  	// if(data[i].Image.length<1){
+	  	if(data[i].Image.length<1){
 	    imgSrc = '/images/default.png';
-	  	// } else {
-	  	// 	imgSrc = '../files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
-	  	// }
+	  	} else {
+	  		imgSrc = '/image/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
+	  	}
 	  	$('.resultsPanel').append('<div class="resultItemSong" id="../files/'+data[i].LinkToMedia+'" '+
 	  		'onclick="clickedSong(this)">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=title>'+data[i].Title+'</p>'+
-	  		'<p class=artist>'+data[i].Username+'</p>'+
-	  		'<p class=album>'+data[i].AlbumID+'</p>'+
+	  		'<p class=artist>'+data[i].Artist+'</p>'+
+	  		'<p class=album>'+data[i].Album+'</p>'+
 	  		'<p class=length>'+data[i].Length+'</p>'+
 	  		'<p class=track>'+data[i].TrackNum+'</p>'+
 	  		'</div>');
