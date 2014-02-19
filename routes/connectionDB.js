@@ -23,7 +23,15 @@ exports.artists = function(req,res){
 }
 	
 exports.albums = function(req,res){
-	connection.query('select * from Album', function (err, rows, fields) {
+	var where;
+	where = '';
+	if(req.params.artistID != 'none'){
+		where = 'and art.ArtistID = \'' + req.params.artistID + '\' ';
+	}
+	connection.query('select alb.AlbumID, alb.Name as Album, alb.Genre, alb.Image, art.Name as Artist '+
+		'from Album alb, ContributesTo c, Artist art '+
+		'where c.AlbumID = alb.AlbumID and c.ArtistID = art.ArtistID '+
+		where+'order by Artist', function (err, rows, fields) {
 	  if (err) throw err;
 	  res.send(rows);
  	});

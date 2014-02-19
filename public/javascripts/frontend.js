@@ -14,7 +14,8 @@ function ajaxArtists() {
 	  	} else {
 	  		imgSrc = data[i].Image;
 	  	}
-	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].ArtistID+'>'+
+	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].ArtistID+
+	  		' onclick="ajaxAlbums('+data[i].ArtistID+',\''+data[i].Name+'\')" style="cursor: pointer;">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=resultBold>'+data[i].Name+'</p>'+
 	  		'<p class=resultLame>artistID is '+data[i].ArtistID+'</p></div>');
@@ -22,13 +23,16 @@ function ajaxArtists() {
 	});
 };
 
-function ajaxAlbums() {
+function ajaxAlbums(artistID, artistName) {
+	var title = 'Albums';
+	if(artistID != 'none'){
+		title = artistName;
+	}
 	$('.resultsPanel').empty();
 	$('.resultsTitle').empty();
-	$('.resultsTitle').append('Albums');
-	$.get("/albums", function(data,status){
+	$('.resultsTitle').append(title);
+	$.get("/albums/"+artistID, function(data,status){
 	  // alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
-
 	  var i;
 	  for(i in data) {
 	  	// console.log
@@ -39,10 +43,10 @@ function ajaxAlbums() {
 	  		imgSrc = '/image/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	}
 	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+
-	  		' onclick="ajaxSongs('+data[i].AlbumID+',\''+data[i].Name+'\',\'TrackNum\')" style="cursor: pointer;">'+
+	  		' onclick="ajaxSongs('+data[i].AlbumID+',\''+data[i].Album+'\',\'TrackNum\')" style="cursor: pointer;">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
-	  		'<p class=resultBold>'+data[i].Name+'</p>'+
-	  		'<p class=resultLame>'+data[i].ReleaseDate+'</p>'+
+	  		'<p class=resultBold>'+data[i].Album+'</p>'+
+	  		'<p class=resultLame>'+data[i].Artist+'</p>'+
 	  		'<p class=resultLame>'+data[i].Genre+'</p></div>');
 	  }
 	});
