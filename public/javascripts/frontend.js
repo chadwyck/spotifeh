@@ -75,7 +75,7 @@ function ajaxSongs(albumID, albumTitle, order) {
 	  	} else {
 	  		imgSrc = '/image/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	}
-	  	$('.resultsPanel').append('<div class="resultItemSong" id="../files/'+data[i].LinkToMedia+'" '+
+	  	$('.resultsPanel').append('<div class="resultItemSong" id="../files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].LinkToMedia+'" '+
 	  		'onclick="clickedSong(this)">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=title>'+data[i].Title+'</p>'+

@@ -50,6 +50,8 @@ exports.songs = function(req,res){
  	});
 }
 
+exports.getConnection = function(req,res) { return connection; }
+
 // exports.songs = function(req,res){
 // 	var where;
 // 	if(req.params.albumName.length > 0) {

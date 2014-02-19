@@ -7,7 +7,7 @@ connectionDB = require('./connectionDB');
 exports.route = function (app) {
 	app.get('/', index);
 	app.post('/', uploadFile);
-	app.get('/files/:filename', getSoundFile);
+	app.get('/files/:user/:album/:filename', getSoundFile);
 	app.get('/image/:user/:album/:filename', getImageFile);
 	app.get('/artists', getArtists);
 	app.get('/albums', getAlbums);
