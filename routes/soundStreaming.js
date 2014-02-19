@@ -122,6 +122,17 @@ var contributes = function(AlbumId, ArtistId, result, path, filename){
 								});
 							});	
 					});
+				} else {
+					var folderPath = __dirname + '/../../files/roscoeswetsuit/'+AlbumId+'/';
+					fs.readFile(path, function (err, data) {
+					  var newPath = folderPath+filename;
+					  fs.writeFile(newPath, data, function (err) {
+					  	connection.query('INSERT INTO Song (Username, AlbumID, TrackNum, Length, Title, LinkToMedia) '+
+							'VALUES (\'roscoeswetsuit\', \''+AlbumId+'\', \''+result.track.no+'\', \'10\', \''+result.title+'\', \''+filename+'\')', function(err, resultB) {
+								if(err) throw err;
+							});
+					  });
+					});
 				}
 		});
 }
