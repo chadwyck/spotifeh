@@ -80,7 +80,7 @@ function ajaxSongs(albumID, albumTitle, order) {
 	  		imgSrc = '/image/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	}
 	  	$('.resultsPanel').append('<div class="resultItemSong" id="../files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].LinkToMedia+'" '+
-	  		'onclick="clickedSong(this)">'+
+	  		'onclick="clickedSong(this,\''+data[i].Title+'\',\''+data[i].Artist+'\')">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=title>'+data[i].Title+'</p>'+
 	  		'<p class=artist>'+data[i].Artist+'</p>'+

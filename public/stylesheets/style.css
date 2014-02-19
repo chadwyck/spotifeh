@@ -194,6 +194,12 @@ footer {
   background-color: #000;
   color: #fff;
 }
+#play-name {
+  position: fixed;
+  left: 0;
+  width: 45%;
+  text-align: center;
+}
 .wavy {
   margin: 20px;
   margin-left: auto;
@@ -210,10 +216,14 @@ footer {
   bottom: -45px;
 }
 #currentTime {
-  right: 35%;
+  position: fixed;
+  bottom: 22px;
+  left: 5%;
 }
 #endTime {
-  left: 35%;
+  position: fixed;
+  bottom: 22px;
+  right: 5%;
 }
 .controller {
   text-align: center;

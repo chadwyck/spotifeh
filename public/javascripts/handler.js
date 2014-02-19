@@ -224,7 +224,8 @@ $(document).on('click', '#repeat', function(){
 	}
 });
 
-function clickedSong(item) {
+function clickedSong(item,title,artist) {
+	document.getElementById("play-name").innerHTML=title+' - '+artist;
 	if(isplaying){
 		isplaying = false;
 		document.images['play-pause'].src = '/images/playButton.svg';
