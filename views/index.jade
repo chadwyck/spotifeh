@@ -1,26 +1,8 @@
 extend layout
 block content
-  h1.resultsTitle Songs
+  h1.resultsTitle Welcome
   div.resultsPanel
-    div.songTableHeader
-        div.blankCover
-        p.title Title
-        p.artist Artist
-        p.album Album
-        p.length Length
-        p.track Track
-    div.resultItemSong(onclick='clickedSong(this)', id='../files/FloatOn.mp3')
-        img.albumCover(src='/images/fleetfoxes.jpg')
-        p.title Montezuma
-        p.artist Fleet Foxes
-        p.album Helplessness Blues
-        p.length 3:45
-        p.track 4
-    div.resultItemSong(onclick='clickedSong(this)', id='../files/05\ -\ Brain\ Cells\ [prod\ by\ Peter\ Cottontale].mp3')
-        img.albumCover(src='/images/grizzly.png')
-        p.title Yet Again
-        p.artist Grizzly Bear
-        p.album Shields
-        p.length 4:52
-        p.track 7
+    div.landingGroup
+        img#landingReel(src='/images/landingReel.svg')
+        img#landingWords(src='/images/landingWords.svg')
         

@@ -71,7 +71,7 @@ h1
 .nav-user
     // float right
     position absolute
-    left 50%
+    left 43%
     display inline
     line-height navbar-height
 
@@ -124,7 +124,7 @@ footer
   margin 20px
   margin-left auto
   margin-right auto
-  width 70%
+  width 80%
 
 .timeWave
   margin-left auto
@@ -199,3 +199,60 @@ footer
 
 #uploadBtn
   margin-left 27%
+
+.searchForm
+  width 500px
+  margin 0 auto
+
+#searchInput
+  background url('/images/search.svg') no-repeat 8px 6px
+  background-size 16px 16px
+  padding 6px 15px 6px 30px
+  margin 3px
+  width 40%
+  border-radius 15px
+  border:1px solid lighten(black, 30%)
+  background-color darken(white, 10%)
+  -moz-border-radius:5px; 
+  -webkit-border-radius:5px;
+  color darken(white, 60%)
+
+input
+  padding 6px 15px 6px 15px
+  width 90%
+  margin 3px
+  border-radius 15px
+  border:1px solid lighten(black, 30%)
+  background-color darken(white, 10%)
+  -moz-border-radius:5px; 
+  -webkit-border-radius:5px;
+  color darken(white, 60%)
+
+#clear
+  visibility false
+
+input:focus {
+    outline:none;
+}
+
+.landingGroup
+  width 100%
+  height 100%
+  text-align center
+  padding-top 50px
+  padding-bottom 50px
+
+#landingReel
+  -webkit-animation-name:             rotate; 
+  -webkit-animation-duration:         5.0s; 
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-animation-timing-function: linear;
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}

@@ -152,7 +152,7 @@ h1 {
 }
 .nav-user {
   position: absolute;
-  left: 50%;
+  left: 43%;
   display: inline;
   line-height: 60px;
 }
@@ -205,7 +205,7 @@ footer {
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 80%;
 }
 .timeWave {
   margin-left: auto;
@@ -288,4 +288,64 @@ footer {
 }
 #uploadBtn {
   margin-left: 27%;
+}
+.searchForm {
+  width: 500px;
+  margin: 0 auto;
+}
+#searchInput {
+  background: url("/images/search.svg") no-repeat 8px 6px;
+  -webkit-background-size: 16px 16px;
+  -moz-background-size: 16px 16px;
+  background-size: 16px 16px;
+  padding: 6px 15px 6px 30px;
+  margin: 3px;
+  width: 40%;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #4d4d4d;
+  background-color: #e6e6e6;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #666;
+}
+input {
+  padding: 6px 15px 6px 15px;
+  width: 90%;
+  margin: 3px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #4d4d4d;
+  background-color: #e6e6e6;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #666;
+}
+#clear {
+  visibility: false;
+}
+input:focus {
+  outline: none;
+}
+.landingGroup {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#landingReel {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }

@@ -44,7 +44,7 @@
   float: left;
 }
 .artist {
-  width: 15%;
+  width: 18%;
   float: left;
   background-color: #141414;
   color: #c1333f;
@@ -60,16 +60,16 @@
   background-color: #141414;
 }
 .editButton {
-  margin: 7.5px;
-  width: 35px;
-  height: 35px;
+  margin: 10px 0px;
+  width: 30px;
+  height: 30px;
   z-index: 100;
 }
 .editButton:hover {
   opacity: 0.6;
 }
 .length {
-  width: 5%;
+  width: 3%;
   float: right;
   text-align: center;
   color: #c1333f;
