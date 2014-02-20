@@ -210,6 +210,16 @@ $(document).on('click', '#skip-left', function(){
 	}
 });
 
+$(document).on('click', '#skip-right', function(){
+	if(nonZeroLength()){
+		playFromPlaylist();
+	} else {
+		ws.stop();
+		isplaying = false;
+		document.images['play-pause'].src = '/images/playButton.svg';
+	}
+});
+
 $(document).on('click', '#mute', function(){
 	ws.toggleMute();
 	if(!ismuted){
