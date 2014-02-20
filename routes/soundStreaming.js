@@ -102,12 +102,13 @@ var contributes = function(AlbumId, ArtistId, result, path, filename){
 			function(err, rows){
 				if(err) throw err;
 				// AlbumId = rows.AlbumID;
-				console.log(rows);
+				console.log('rows: '+rows);
 				if(rows.length<1) {
 
 					connection.query('INSERT INTO ContributesTo (ArtistID, AlbumID) '+
 						'VALUES (\''+ArtistId+'\', \''+AlbumId+'\')', function(err, resultA) {
 							if(err) throw err;
+							console.log('inserted ContributesTo');
 
 							var folderPath = __dirname + '/../../files/roscoeswetsuit/'+AlbumId+'/';
 							fs.mkdir(folderPath, 0755, function(error) {

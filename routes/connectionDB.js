@@ -48,11 +48,36 @@ exports.songs = function(req,res){
 	if(req.params.albumID != 'none'){
 		where = 'and alb.AlbumID = \'' + req.params.albumID + '\' ';
 	}
+	var search;
+
+	switch(req.params.searchby) {
+		case 'song':
+			search = 'and s.Title LIKE \''+req.params.searchterm+'\' ';
+			break;
+		case 'artist':
+			search = 'and c.AlbumID IN (SELECT c.AlbumID '+
+				'FROM ContributesTo c '+
+				'WHERE c.ArtistID IN (SELECT art.ArtistID '+
+									'FROM Artist art '+
+									'WHERE art.Name LIKE \''+req.params.searchterm+'\')) ';
+			break;
+		case 'album':
+			search = 'and c.AlbumID IN (SELECT alb.AlbumID '+
+				 'FROM Album alb '+
+				 'WHERE alb.Name LIKE \''+req.params.searchterm+'\') ';
+			break;
+		case 'none':
+			search = '';
+			break;
+		default:
+			search = '';
+	}
+
 	connection.query('select s.Title, art.Name as Artist, alb.Name as Album, '+
 		's.TrackNum, s.Length, s.LinkToMedia, alb.Image, s.AlbumID '+
 		'from Song s, Album alb, Artist art, ContributesTo c '+
 		'where s.AlbumID = alb.AlbumID and c.AlbumID = alb.AlbumID and c.ArtistID = art.ArtistID '+
-		where+'order by '+orderParam, function (err, rows, fields) {
+		where+search+'order by '+orderParam, function (err, rows, fields) {
 	  if (err) throw err;
 	  res.send(rows);
  	});

@@ -43,7 +43,7 @@ function ajaxAlbums(artistID, artistName) {
 	  		imgSrc = '/image/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].Image;
 	  	}
 	  	$('.resultsPanel').append('<div class="resultItem" id='+data[i].AlbumID+
-	  		' onclick="ajaxSongs('+data[i].AlbumID+',\''+data[i].Album+'\',\'TrackNum\')" style="cursor: pointer;">'+
+	  		' onclick="ajaxSongs('+data[i].AlbumID+',\''+data[i].Album+'\',\'TrackNum\',\'none\')" style="cursor: pointer;">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
 	  		'<p class=resultBold>'+data[i].Album+'</p>'+
 	  		'<p class=resultLame>'+data[i].Artist+'</p>'+
@@ -52,8 +52,9 @@ function ajaxAlbums(artistID, artistName) {
 	});
 };
 
-function ajaxSongs(albumID, albumTitle, order) {
+function ajaxSongs(albumID, albumTitle, order, searchBy) {
 	// alert(albumID + ' ' + albumTitle);
+	// alert(searchBy);
 	var title = 'Songs';
 	if(albumID != 'none'){
 		title = albumTitle;
@@ -62,13 +63,17 @@ function ajaxSongs(albumID, albumTitle, order) {
 	$('.resultsTitle').empty();
 	$('.resultsTitle').append(title);
 	$('.resultsPanel').append('<div class="songTableHeader"><div class="blankCover" />'+
-		'<div class="title head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Title\')">'+
-		'Title</div><div class="artist head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Artist\')">'+
-		'Artist</div><div class="album head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Album\')">'+
-		'Album</div><div class="length head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Length\')">'+
-		'Length</div><div class="track head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'TrackNum\')">'+
+		'<div class="title head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Title\',\''+searchBy+'\')">'+
+		'Title</div><div class="artist head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Artist\',\''+searchBy+'\')">'+
+		'Artist</div><div class="album head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Album\',\''+searchBy+'\')">'+
+		'Album</div><div class="length head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Length\',\''+searchBy+'\')">'+
+		'Length</div><div class="track head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'TrackNum\',\''+searchBy+'\')">'+
 		'Track</div></div>');
-	$.get("/songs/"+albumID+"/"+order, function(data,status){
+	var searchTerm = 'none';
+	if(searchBy != 'none'){
+		searchTerm = $('#searchInput').val();
+	}
+	$.get("/songs/"+albumID+"/"+order+"/"+searchBy+"/"+searchTerm, function(data,status){
 	  // alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 
 	  var i;
@@ -91,6 +96,15 @@ function ajaxSongs(albumID, albumTitle, order) {
 	  }
 	});
 };
+
+function searchEnter() {
+	if(event.keyCode == 13){
+		ajaxSongs('none','none','none',$('#searchType').val());
+
+		return false;
+	}
+	return true;
+}
 
 // document.getElementById("inputUpload").onchange = function () {
 //     document.getElementById("uploadFile").value = this.value;

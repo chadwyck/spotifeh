@@ -18,7 +18,7 @@
   display: inline;
   font-size: 10px;
 }
-input {
+#inputUpload {
   opacity: 0;
   cursor: pointer;
   position: absolute;

@@ -151,7 +151,8 @@ h1 {
   position: absolute;
 }
 .nav-user {
-  float: right;
+  position: absolute;
+  left: 50%;
   display: inline;
   line-height: 60px;
 }

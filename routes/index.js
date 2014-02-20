@@ -11,7 +11,7 @@ exports.route = function (app) {
 	app.get('/image/:user/:album/:filename', getImageFile);
 	app.get('/artists', getArtists);
 	app.get('/albums/:artistID', getAlbums);
-	app.get('/songs/:albumID/:order', getSongs);
+	app.get('/songs/:albumID/:order/:searchby/:searchterm', getSongs);
 	// app.get('/addQueue/:filename', addQueue);
 	// app.post('/upload', uploadFile);
 };
