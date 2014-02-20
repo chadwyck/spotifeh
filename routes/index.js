@@ -1,5 +1,5 @@
 var index, stSound, postIndex, getSoundFile, getImageFile,
-	getArtists, getAlbums, getSongs, uploadFile, addQueue;
+	getArtists, getAlbums, getSongs, uploadFile, doUpdate;
 
 stSound = require('./soundStreaming');
 connectionDB = require('./connectionDB');
@@ -9,6 +9,7 @@ exports.route = function (app) {
 	app.post('/', uploadFile);
 	app.get('/files/:user/:album/:filename', getSoundFile);
 	app.get('/image/:user/:album/:filename', getImageFile);
+	app.get('/update/:newTitle/:albumID/:trackNum', doUpdate);
 	app.get('/artists', getArtists);
 	app.get('/albums/:artistID', getAlbums);
 	app.get('/songs/:albumID/:order/:searchby/:searchterm', getSongs);
@@ -51,6 +52,10 @@ getSongs = function(req, res) {
 
 uploadFile = function(req, res) {
 	return stSound.uploadMgr(req, res);
+};
+
+doUpdate = function(req, res) {
+	return connectionDB.update(req, res);
 };
 
 // addQueue = function(req, res) {

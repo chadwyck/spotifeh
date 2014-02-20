@@ -138,7 +138,7 @@ var loadMusic = function (url) {
 
 		document.addEventListener('keydown', function (e) {
 			var map = {
-				32: 'play',       // space
+				121: 'play',       // F10
 				// 38: 'green-mark', // up
 				// 40: 'red-mark',   // down
 				37: 'back',       // left

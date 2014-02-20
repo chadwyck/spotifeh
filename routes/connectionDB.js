@@ -83,6 +83,16 @@ exports.songs = function(req,res){
  	});
 }
 
+exports.update = function(req,res) {
+	console.log('Hit the update section');
+	connection.query('UPDATE spotifeh.Song SET Title = \''+req.params.newTitle+'\' '+
+	'WHERE Song.Username = \'roscoeswetsuit\' AND Song.AlbumID = \''+
+	req.params.albumID+'\' AND Song.TrackNum = \''+req.params.trackNum+'\' LIMIT 1;', function (err, rows, fields) {
+	  if (err) throw err;
+	  res.send('song updated');
+ 	});
+}
+
 exports.getConnection = function(req,res) { return connection; }
 
 // exports.songs = function(req,res){

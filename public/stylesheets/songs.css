@@ -59,6 +59,15 @@
   text-align: center;
   background-color: #141414;
 }
+.editButton {
+  margin: 7.5px;
+  width: 35px;
+  height: 35px;
+  z-index: 100;
+}
+.editButton:hover {
+  opacity: 0.6;
+}
 .length {
   width: 5%;
   float: right;

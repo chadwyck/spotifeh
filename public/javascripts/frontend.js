@@ -66,8 +66,8 @@ function ajaxSongs(albumID, albumTitle, order, searchBy) {
 		'<div class="title head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Title\',\''+searchBy+'\')">'+
 		'Title</div><div class="artist head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Artist\',\''+searchBy+'\')">'+
 		'Artist</div><div class="album head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Album\',\''+searchBy+'\')">'+
-		'Album</div><div class="length head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'Length\',\''+searchBy+'\')">'+
-		'Length</div><div class="track head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'TrackNum\',\''+searchBy+'\')">'+
+		'Album</div><div class="length">'+
+		'Edit</div><div class="track head-click" onclick="ajaxSongs(\''+albumID+'\',\''+albumTitle+'\',\'TrackNum\',\''+searchBy+'\')">'+
 		'Track</div></div>');
 	var searchTerm = 'none';
 	if(searchBy != 'none'){
@@ -87,14 +87,31 @@ function ajaxSongs(albumID, albumTitle, order, searchBy) {
 	  	$('.resultsPanel').append('<div class="resultItemSong" id="../files/roscoeswetsuit/'+data[i].AlbumID+'/'+data[i].LinkToMedia+'" '+
 	  		'onclick="clickedSong(this,\''+data[i].Title+'\',\''+data[i].Artist+'\')">'+
 	  		'<img class="albumCover" src='+imgSrc+'></img>'+
-	  		'<p class=title>'+data[i].Title+'</p>'+
+	  		'<div class=title id="'+data[i].TrackNum+'QQ'+data[i].AlbumID+'">'+data[i].Title+'</div>'+
 	  		'<p class=artist>'+data[i].Artist+'</p>'+
 	  		'<p class=album>'+data[i].Album+'</p>'+
-	  		'<p class=length>'+data[i].Length+'</p>'+
+	  		'<p class=length><img class="editButton" src="/images/editButton.svg" onclick="editIt(\''+data[i].Title+'\',\''+data[i].TrackNum+'\',\''+data[i].AlbumID+'\')"></img></p>'+
 	  		'<p class=track>'+data[i].TrackNum+'</p>'+
 	  		'</div>');
 	  }
 	});
+};
+
+function editIt(title, trackNum, albumID) {
+	document.getElementById(trackNum+'QQ'+albumID).innerHTML = '<input type="text" value="'+title+'" onkeydown="editEnter(this, this.value, '+trackNum+', '+albumID+');">';
+};
+
+function editEnter(theGuy, newTitle, trackNum, albumID) {
+	if(event.keyCode == 13){
+		// alert('key enter');
+		document.getElementById(trackNum+'QQ'+albumID).innerHTML = newTitle;
+		$.get("/update/"+newTitle+"/"+albumID+"/"+trackNum, function(data,status){
+			
+		});
+	} else if(event.keyCode == 13){
+		alert('key space');
+		theGuy.value += ' ';
+	}
 };
 
 function searchEnter() {
@@ -104,7 +121,7 @@ function searchEnter() {
 		return false;
 	}
 	return true;
-}
+};
 
 // document.getElementById("inputUpload").onchange = function () {
 //     document.getElementById("uploadFile").value = this.value;
