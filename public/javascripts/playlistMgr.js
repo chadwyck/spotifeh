@@ -14,6 +14,7 @@ var pushOnPlaylist = function(url, title, artist) {
 	        "artist" : artist 
 	    });
 	}
+	updatePlaylist();
 }
 
 var playFromPlaylist = function() {
@@ -21,9 +22,14 @@ var playFromPlaylist = function() {
 		var newSong = playlist.list.splice(0, 1)[0];
 		playSong(newSong.url,newSong.title,newSong.artist);
 	}
+	updatePlaylist();
 }
 
 var nonZeroLength = function() {
 	if(playlist.list.length > 0) return true;
 	return false;
+}
+
+var jsonPlaylist = function() {
+	return playlist;
 }

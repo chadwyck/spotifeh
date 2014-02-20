@@ -1,14 +1,14 @@
 .sliderPane {
-  top: 60px;
+  top: 0px;
   right: 0px;
   width: 22%;
-  height: 85%;
+  height: 145%;
   background-color: #131313;
   position: fixed;
   z-index: 0;
   display: none;
   padding-left: 50px;
-  padding-top: 50px;
+  padding-top: 110px;
   color: #fff;
 }
 .sliderPane form {
@@ -17,6 +17,9 @@
 .sliderPane form #uploadFile {
   display: inline;
   font-size: 10px;
+}
+#playlistPane {
+  left: 0px;
 }
 #inputUpload {
   opacity: 0;
@@ -45,16 +48,29 @@
   background-color: #c1333f;
   box-shadow: 0px 3px 0px 0px #60191f;
 }
-#sliderImg {
+#sliderImg,
+#sliderImg2 {
   width: 1.5em;
   margin-left: auto;
   margin-right: auto;
   top: 12px;
   position: relative;
 }
-#pictureSlider:hover {
+#pictureSlider:hover,
+#playlistSlider:hover {
   background-color: #b32f3b;
 }
-#pictureSlider:active {
+#pictureSlider:active,
+#playlistSlider:active {
   background-color: #a42b36;
+}
+#playlistSlider {
+  left: 0;
+  transition: background 0.1s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out;
+  -moz-transition: background 0.1s ease-in-out;
+  -ms-transition: background 0.1s ease-in-out;
+  -o-transition: background 0.1s ease-in-out;
+  background-color: #c1333f;
+  box-shadow: 0px 3px 0px 0px #60191f;
 }
