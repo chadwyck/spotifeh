@@ -10,9 +10,10 @@
 // Create an instance
 
 var ws;
-var isplaying = false;
+var isplaying = true;
 var ismuted = false;
 var willRepeat = false;
+var autoPlay = true;
 
 var loadMusic = function (url) {
 
@@ -80,14 +81,20 @@ var loadMusic = function (url) {
 // Play at once when ready
 // Won't work on iOS until you touch the page
 	wavesurfer.on('ready', function () {
-		// $("endTime").text('2:33');
-//    wavesurfer.play();
+		if(autoPlay) wavesurfer.play();
 	});
 
 	wavesurfer.on('finish', function () {
 			if(willRepeat){
 				ws.stop();
 				ws.play();
+			} else {
+				if(nonZeroLength()){
+					playFromPlaylist();
+				} else {
+					isplaying = false;
+					document.images['play-pause'].src = '/images/playButton.svg';
+				}
 			}
 		});
 	// wavesurfer.on('loading', function (percent, xhr) {
@@ -224,14 +231,22 @@ $(document).on('click', '#repeat', function(){
 	}
 });
 
-function clickedSong(item,title,artist) {
-	document.getElementById("play-name").innerHTML=title+' - '+artist;
-	if(isplaying){
-		isplaying = false;
-		document.images['play-pause'].src = '/images/playButton.svg';
-	}
-	ws.load($(item).attr("id"));
+function checkIsPlaying() {
+	return isplaying;
 }
+
+function clickedSong(item,title,artist) {
+	pushOnPlaylist($(item).attr("id"),title,artist);
+};
+
+function playSong(url, title, artist) {
+	document.getElementById("play-name").innerHTML=title+' - '+artist;
+	if(!isplaying){
+		isplaying = true;
+		document.images['play-pause'].src = '/images/pauseButton.svg';
+	}
+	ws.load(url);
+};
 
 
 
